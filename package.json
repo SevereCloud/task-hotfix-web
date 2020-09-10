@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cross-env PORT=10888 react-scripts start",
     "build": "react-scripts build",
+    "docker-build": "docker build .",
     "surge-deploy": "npm run build && surge ./build --domain kozodoi-club-hack.surge.sh"
   },
   "keywords": [],
