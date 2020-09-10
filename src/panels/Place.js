@@ -101,8 +101,8 @@ const Place = ({ item, order, onIncrementPosition, onDecrementPosition, area }) 
         )))}
       </ul>
       <footer className="Place__footer">
-        <Link to={`/basket/${area.id}/${item.id}`} className="Place__order">
-          Оформить заказ ({price})
+        <Link to={`/basket/${area.id}/${item.id}`} className="Place__order" disable={price === "0"?"yes":"no"}>
+          Оформить заказ{price!=="0" && ` (${price})`} 
         </Link>
       </footer>
     </div>
