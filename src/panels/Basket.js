@@ -9,9 +9,24 @@ import './place.css';
 
 
 const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order }) => {
-  const [ faster, setFaster ] = useState(true);
-  const [ time, setTime ] = useState('');
-  const [ selfService, setSelfService ] = useState(false);
+  const [ faster, setFasterState ] = useState(localStorage.getItem('faster') !== 'false');
+  const setFaster = (v) => {
+    setFasterState(v)
+    localStorage.setItem('faster', v)
+  } 
+  
+  const [ time, setTimeState ] = useState(localStorage.getItem('time') || '');
+  const setTime = (v) => {
+    setTimeState(v)
+    localStorage.setItem('time', v)
+  } 
+  
+  const [ selfService, setSelfServiceState ] = useState(localStorage.getItem('selfService') === 'true');
+  const setSelfService = (v) => {
+    setSelfServiceState(v)
+    localStorage.setItem('selfService', v)
+  } 
+  
   const area = foodAreas.filter(area => area.id === areaId)[0];
   const item = area.items.filter(item => item.id === itemId)[0];
 
