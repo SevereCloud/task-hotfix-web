@@ -129,7 +129,7 @@ const App = () => {
 	const [ order, setOrder ] = useState(JSON.parse((localStorage.getItem('orders') || 'null')) || {});
 
 	return (
-		<Router basename="/task-hotfix-web">
+		<Router>
 			<Switch>
 				<Route path="/" exact>
 					<Home foodAreas={FOOD_AREAS} order={order} />

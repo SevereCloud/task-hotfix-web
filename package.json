@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://severecloud.github.io/task-hotfix-web/",
   "scripts": {
     "start": "cross-env PORT=10888 react-scripts start",
     "build": "react-scripts build",
